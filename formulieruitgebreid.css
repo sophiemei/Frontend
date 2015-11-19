@@ -1,0 +1,764 @@
+* {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    /*outline: 1px solid red;*/
+}
+
+.hide { /*Aangemaakte class in Javascript*/
+    display: none;
+}
+
+/*////////////////////////////////////////////////////////////////Body*/
+
+body {
+    display: flex;
+    font-family: Roboto;
+    color: #000;
+    flex-direction: column;
+    line-height: 1.5em;
+    max-width: 80em;
+}
+
+p {
+    margin-bottom: 1.5em;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000; /*Anders zijn (sommige) ze blauw*/
+}
+
+article p > a {
+    color: #FFCC01;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+/*/////////////////////////////////////////Formulier*/
+
+main {
+    margin: 2em;
+}
+
+main h1 {
+    margin-bottom: .4em;
+}
+
+main form fieldset {
+    display: flex;
+    border: none;
+    margin-top: 2em;
+}
+
+span {
+    flex-basis: 100%;
+}
+
+fieldset label {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main form fieldset label {
+    padding-bottom: 1em;
+}
+
+main form fieldset label em {
+    font-size: .9em;
+    margin-left: .5em;
+    margin-top: 1em;
+    color: red;
+}
+
+main form fieldset label input {
+    background: #F8F8F8;
+    border: none;
+    width: 80%;
+    font-size: 1em;
+    padding: 1em;
+}
+
+fieldset legend {
+    font-size: 1.8em;
+    font-weight: 100;
+    margin-bottom: .7em;
+}
+
+textarea {
+    flex-basis: 80%;
+    border: none;
+    background: #F8F8F8;
+    height: 10em;
+}
+
+fieldset:nth-child(2) label {
+    flex-wrap: nowrap;
+}
+
+#project fieldset label {
+    flex-wrap: nowrap;
+}
+
+#project fieldset label input {
+    flex-basis: 10%;
+}
+
+form fieldset:nth-child(2) label input {
+    flex-basis: 10%;
+}
+
+#stage fieldset legend {
+    font-size: 1.3em;
+}
+
+#stage fieldset:nth-child(3) label input {
+    width: 10%;
+}
+
+input[type=submit] {
+    background: #000;
+    color: #FFF;
+    padding: 1em;
+    border: none;
+    font-size: 1em;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+    border-radius: .3em;
+}
+
+/*///////////////////////////////////////////////////////////////Header*/
+
+body > header {
+    display: flex;
+    flex-flow: column nowrap;
+    background: #FFCC01;
+    padding: 2em;
+}
+
+header > h1 {
+    display: none;
+}
+
+header > p:first-of-type {
+    display: none;
+}
+
+header > img {
+    display: none;
+}
+
+header + p a { /*Sibling combinator: selecteert alle a elementen die direct volgen na alle p elementen in header*/
+    text-decoration: underline;
+}
+
+.to-profile {
+    display: none;
+}
+
+/*////////////////////////////////////////////////////////////Navigatie*/
+
+.scroll { /*Deze class is toegevoegd in de HTML*/
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+nav ul {
+    width: 850px; /*Zodat alle items volledig zichtbaar zijn*/
+    margin-top: 7.5em;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 1em 2em; /*van boven naar beneden, van links naar rechts*/
+    background: #FFDA45;
+    color: #000;
+    margin-right: .5em;
+}
+
+nav a:hover { /*pseudoclass*/
+    background: #000;
+    color: #FFF;
+    border-radius: .3em;
+    transition: .5s;
+}
+
+#active { /*Om een geselecteerd item te laten zien */
+    background: #000;
+    color: #FFF;
+    border-radius: .3em;
+}
+
+/*///////////////////////////////Zoekbalkheader*/
+
+header label {
+    display: none;
+}
+
+body header form  {
+    order: -10;
+    background: #F2F2F2;
+    opacity: .98;
+    margin: -2rem;
+    padding: 2em;
+    position: fixed;
+    justify-content: flex-end;
+    z-index: 1;
+    width: 100%;
+}
+
+header input[type=search] { /*Attribute selector*/
+        /*background: #FFF url(photos/magnifying-glass32.png) no-repeat 1.5em center;*/
+        background: #FFF;
+        /*border-radius: 3em;*/
+        padding: 1.4em 2em;
+        border: none;
+        font-size: .8em;
+        width: 100%;
+}
+
+header input::-webkit-search-cancel-button {
+    display: none;
+}
+
+header button {
+    display: none;
+}
+
+header input:focus {
+    outline: none;
+}
+
+/*/////////////////////////////////Hoofdcontent*/
+
+.related dl {
+    font-weight: 100;
+}
+
+.related ul a {
+    text-decoration: underline;
+    font-size: .8em;
+}
+
+.related h4 {
+    margin-top: .5em;
+}
+
+.related {
+    display: flex;
+    flex-direction: column;
+    order: 9;
+    padding: 2em;
+}
+
+.related > h2 {
+    flex-basis: 100%;
+}
+
+.related > article {
+    padding: 2em;
+    margin-right: 1em;
+    background: #ECECEC;
+    margin-top: 2em;
+    box-shadow: .4em .4em .1em #F5F5F5;
+    width: 100%;
+/*    horizontaal, verticaal, blur radius, spread radius*/
+}
+
+.related p ~ p {
+/*    Sibling combinator: selecteert elk p element dat gevolgd wordt door een p dat gevogld wordt door een p*/
+    font-weight: 600;
+}
+
+/*//////////////////////////////////Aside*/
+
+aside {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+aside section:first-child {
+    background: #FFCC01;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+aside section:nth-child(2) {
+    background: #FFDA45;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+aside section article:first-of-type {
+    margin-top: 1em;
+}
+
+aside section article {
+    max-width: 28em;
+}
+
+aside section h2 {
+    background: #FFDA45 url("photos/direction196goedtwee.png") right 2em center no-repeat;
+    padding: 1em;
+    margin-left: -1.4rem;
+    margin-right: -2rem;
+    font-weight: 100;
+}
+
+aside article footer {
+    margin-top: .5em;
+    margin-bottom: -.8em;
+}
+
+aside section article a {
+    color: #000;
+    text-decoration: underline;
+}
+
+/*////////////////////Plaatje verandert op het moment er wordt gedrukt op de knop*/
+
+aside section:first-child h2 {
+    background: #FFCC01 url("photos/direction196goedtwee.png") right 2em center no-repeat;
+}
+
+aside section h2.active, aside section:first-child h2.active {
+    background-image: url("photos/direction196goed.png");
+}
+
+/*/////////////////////////////////Footer*/
+
+body > footer {
+    display: flex;
+    flex-direction: column;
+    background: #FFCC01;
+    order: 10;
+}
+
+#contact,
+#sitemap {
+    margin-top: 1.5em;
+
+}
+
+#contact h2,
+#sitemap h2,
+#about h2 {
+    margin-bottom: .5em;
+}
+
+#feedback {
+    order: 13;
+    border: .2em solid #000;
+    padding: .5em;
+    width: 10em;
+    margin-left: 2em;
+}
+
+#feedback:hover {
+    border-radius: .4em;
+    transition: .4s;
+}
+
+#sitemap {
+    font-weight: 300;
+}
+
+/*/////////////////////////////////Zoekbalkfooter*/
+
+/*footer form {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+footer input {
+    flex-basis: 100%;
+}
+
+footer input:first-child {
+    font-size: 1em;
+    padding: 1.2em 1em;
+    border: none;
+    margin-bottom: .5em;
+}
+
+footer input:nth-child(2) {
+    font-size: 1em;
+    padding: 1.2em 1em;
+    border: .15em solid #000;
+    background: #FFCC01;
+    color: #000;
+    cursor: pointer;
+    transition: .3s;
+}
+
+footer input:nth-child(2):hover {
+    background: #000;
+    color: #FFF;
+}
+
+footer h2 {
+    margin-bottom: .5em;
+    margin-top: 1em;
+}
+
+footer input:focus {
+    outline: none;
+}*/
+
+#search {
+    display: none;
+}
+
+#contact,
+#sitemap,
+#about {
+    order: 2;
+    padding: 2em;
+}
+
+#sitemap a {
+    text-decoration: underline;
+}
+
+#credits {
+    order: 100;
+    font-size: .8em;
+    padding-left: 2em;
+}
+
+#credits h2 {
+    display: none;
+}
+
+/*/////////////////////////Animatie*/
+
+@keyframes big {
+    0% {
+        transform: scale(1);
+    }
+    70% {
+        transform: scale(.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+@media only screen and (min-width:33em ) {
+
+    /*header button {
+      font-size: .8em;
+      padding: 1.4em 2.4em;
+      border: none;
+      background: #000;
+      color: White;
+    }*/
+
+    header input:focus {
+        outline: none;
+        width: 38em;
+    }
+
+    body header form {
+    display: flex;
+    flex-direction: row;
+}
+
+    header button {
+        display: block;
+        color: #000;
+        width: 7em;
+        font-size: 1em;
+        margin-left: .5em;
+        border: .15em solid #000;
+        background: #F2F2F2;
+    }
+
+    header button:hover {
+        background: #000;
+        color: #fff;
+        transition: .2s;
+        cursor: pointer;
+    }
+
+    aside section article {
+        width: 28em;
+    }
+
+    header input[type=search] { /*Attribute selector*/
+        width: 20em;
+    }
+
+    section > img {
+        width: 30em;
+    }
+
+    /*footer form {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    footer input:first-child {
+        flex-basis: 50%;
+        margin: 0;
+        margin-right: .5em;
+    }
+
+    footer input:nth-child(2) {
+        flex-basis: 25%;
+    }*/
+
+    body footer {
+        flex-flow: row wrap;
+    }
+
+    #contact,
+    #sitemap {
+        order: 2;
+        flex-basis: 50%;
+        margin: 0;
+        padding-right: 1em;
+    }
+
+    #about {
+        flex-basis: 100%;
+        margin-top: 1.5em;
+    }
+
+}
+
+
+
+
+@media only screen and (min-width:40em ) {
+
+    header > img {
+    position: fixed;
+    display: block;
+    width: 12em;
+    animation: big 2s infinite;
+    z-index: 2;
+    }
+}
+
+
+@media only screen and (min-width: 45em) {
+
+   aside section:first-child {
+        background: #FFF;
+    }
+
+    aside section:nth-child(2) {
+        background: #FFF;
+    }
+
+
+    body {
+        flex-flow: row wrap;
+    }
+
+    body > header {
+        flex-flow: column nowrap;
+        flex-basis: 100%;
+    }
+
+    aside p {
+        font-size: 15px;
+    }
+
+    aside section:first-child h2, aside section h2, aside section h2.active, aside section:first-child h2.active {
+        background-image: none;
+        background: #FFF;
+        margin-bottom: -1rem;
+        font-weight: 100;
+    }
+
+
+    /*/////////////////////////Hoofdcontent*/
+
+    aside {
+        display: block;
+    }
+
+    .hide {
+        display: block;
+    }
+
+    main {
+        flex-basis: 50%;
+    }
+
+    main > article {
+        flex-flow: column wrap;
+    }
+
+    .related {
+        flex-flow: row wrap;
+    }
+
+    .related article {
+        flex-basis: 45%;
+    }
+
+    /*/////////////////////////Aside*/
+
+    aside {
+        flex-basis: 40%;
+        align-self: flex-start;
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    aside section h2 {
+        margin-top: -1rem;
+    }
+
+    aside section article a {
+        color: #FFCC01;
+    }
+
+    aside section {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5em;
+    }
+
+    aside section article {
+        max-width: 20em;
+    }
+
+    aside footer {
+        padding: 0;
+        margin-top: .5em;
+    }
+
+    /*/////////////////////////Footer*/
+
+    body > footer {
+        flex-flow: row wrap;
+    }
+
+    #credits {
+        flex-basis: 100%;
+        background: #000;
+        opacity: .6;
+        color: #FFF;
+        width: 100%;
+        transition: 2s ease-in;
+        padding-top: 1.5em;
+    }
+
+    #about {
+        margin: 0;
+    }
+
+    #contact,
+    #sitemap,
+    #about {
+        flex-basis: 33%;
+    }
+
+    #contact p {
+    max-width: 15em;
+}
+
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 70em) {
+
+    header input[type=search] { /*Attribute selector*/
+    transition: width 400ms linear;
+}
+
+    aside section article {
+        max-width: 15em;
+    }
+
+    main {
+        flex-basis: 40%;
+    }
+
+    main > article {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    aside {
+        flex-basis: 50%;
+        align-self: flex-start;
+
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    aside > section {
+        flex-basis: 50%;
+
+        display: flex;
+        flex-direction: column;
+        padding: 1.5em;
+    }
+
+    aside footer {
+        padding: 0;
+        margin-top: .5em;
+    }
+
+    .related article {
+        flex-flow: row wrap;
+        flex-basis: 35%;
+    }
+
+    nav a:hover {
+        transition: .6s;
+        border-radius: .3em;
+    }
+
+    /*/////////////////////////Footer*/
+
+
+
+    /*#search {
+        flex-direction: column;
+    }
+
+    #search h2 {
+        font-size: 1em;
+        text-shadow: none;
+        font-weight: 500;
+        margin-bottom: 0;
+    }*/
+
+    #contact,
+    #about h2 {
+        margin: 0;
+    }
+
+}
+
+
+
+

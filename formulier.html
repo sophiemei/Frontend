@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Formulier</title>
+        <meta charset="UTF-8">
+<!--UTF-8 betekent: set karakters uit het alfabet (standaard) wat overeenkomt met een normaal Nederlands toetsenbord-->
+    </head>
+
+    <body>
+            <h1>Aanmelden</h1>
+            <p>Bent u geïnteresseerd in samenwerken met CMD Amsterdam? Dat kan! Tijdens de opleiding werken studenten aan projecten voor echte                     opdrachtgevers. Ook lopen de studenten stage, in het tweede en afstudeerjaar.</p>
+
+            <p><em>CMD Amsterdam zoekt altijd naar positieve verbindingen met de creatieve stad Amsterdam.</em></p>
+            <!--Dit is geen quote, er moet juist nadruk worden gelegd op de tekst. Vandaar dat ik em heb gebruikt-->
+
+            <p>Voor het aanmelden van stageplekken of projecten kunt u onderstaand formulier invullen. Wij nemen zo nodig contact met u op nadat                 het formulier is verstuurd. Voor vragen of opmerkingen kunt u <a               href="http://www.hva.nl/onderwijs/opleidingen/content/dmci/communication-and-multimedia-design/meer-informatie/contact/contact-en-locatie.html">contact</a> met ons op.</p>
+
+        <form>
+        <!--for="name" zegt "dit label bevat informatie voor het input id="name" -->
+             <fieldset> <!--Met fieldset groeper je verwante formulierelementen aan elkaar-->
+                 <legend>Contactgegevens</legend>
+                     <label for="naam">Naam:</label> <!--labels zorgen ervoor dat het geheel klikbaar is en geschikt is voor slechtzienden-->
+                     <input type="text" required name="naam" id="naam"/>
+
+                     <label for="bedrijf">Bedrijf:</label>
+                     <input type="text" required name="bedrijf" id="bedrijf"/>
+
+                     <label for="adres">Adres:</label>
+                     <input type="text" required name="adres" id="adres"/>
+
+                     <label for="postcode">Postcode:</label>
+                     <input type="text" required name="postcode" id="postcode"/>
+
+                     <label for="plaats">Plaats:</label>
+                     <input type="text" required name="plaats" id="plaats"/>
+
+                     <label for="telefoon">Telefoon:</label>
+                     <input type="tel" required name="telefoon" id="telefoon"/>
+
+                     <label for="email">E-mail:</label>
+                     <input type="email" required name="email" id="email"/>
+
+                      <p>Ik wil mij aanmelden voor:
+                          <input type="radio" name="aanmelden" id="aanmelden-project"><label for="aanmelden-project">Voor een project</label>
+
+                          <input type="radio" name="aanmelden" id="aanmelden-stage"><label for="aanmelden-stage">Als stagebedrijf</label>
+                      </p>
+    <!--name moet hetzelfde zijn, zodat er maar één radiobutton kan worden geselecteerd-->
+            </fieldset>
+
+            <fieldset>
+                <legend>Project</legend>
+                    <label for="titel">Titel:</label>
+                    <input type="text" required name="titel" id="titel"/>
+
+                    <label for="TV1">Opdrachtomschrijving:</label>
+                    <textarea rows="5" required cols="30" name="TekstVlak1" id="TV1"></textarea>
+
+                    <label for="TV2">Doelgroepomschrijving:</label>
+                    <textarea rows="5" required cols="30" name="TekstVlak2" id="TV2"></textarea>
+
+                    <label for="TV3">Intentie van het project:</label>
+                    <textarea rows="5" required cols="30" name="TekstVlak3" id="TV3"></textarea>
+
+                    <label for="looptijd">Looptijd van</label>
+                    <input type="date" id="looptijd" required>
+
+                    <label for="tot">tot</label>
+                    <input type="date" id="tot" required>
+
+                    <label for="deadline">Deadline</label>
+                    <input type="date" id="deadline" required>
+
+                    <p>Geschikt voor:</p>
+
+                    <select>
+                        <option label="eerstejaars studenten">eerstejaars studenten</option>
+                        <option label="tweedejaars studenten">tweedejaars studenten</option>
+                        <option label="derdejaars studenten">derdejaars studenten</option>
+                        <option label="afstudeer studenten">afstudeer studenten</option>
+                        <option label="onbekend">onbekend</option>
+                    </select>
+
+                    <label for="TV4">Opmerking:</label>
+                    <textarea rows="5" cols="30" name="TekstVlak4" id="TV4"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Stage</legend>
+
+                <p>Geschikt voor:</p>
+
+                <select>
+                    <option value="tweedejaars studenten">Tweedejaars studenten</option>
+                    <option value="afstudeer studenten">Afstudeer studenten</option>
+                    <option value="onbekend">Onbekend</option>
+                </select>
+
+                <p>Hoe lang duurt de stage:
+
+                    <input type="radio" name="stageduur" id="stagetijd"><label for="stagetijd">10 weken</label>
+                    <input type="radio" name="stageduur" id="stagetijd2"><label for="stagetijd2">20 weken</label>
+
+                </p>
+
+                <label for="begindatum">Begin datum:</label>
+                <input type="date" required name="datumstage" id="begindatum"/>
+
+                <label for="TV5">Beschrijving stagewerkzaamheden:</label>
+                <textarea rows="5" required cols="30" name="TekstVeld5" id="TV5"></textarea>
+
+                <fieldset>
+                    <legend>Beschrijving stagebedrijf</legend>
+
+                    <label for="bedrijfsnaam">Bedrijfsnaam:</label>
+                    <input type="text" required name="bedrijfsnaam" id="bedrijfsnaam"/>
+
+                    <label for="adres2">Adres:</label>
+                    <input type="text" required name="adres" id="adres2"/>
+
+                    <label for="postcodestage">Postcode:</label>
+                    <input type="text" required name="postcodestage" id="postcodestage"/>
+
+                    <label for="stageplaats">Plaats:</label>
+                    <input type="text" required name="stageplaats" id="stageplaats"/>
+
+                    <label for="sector">Sector:</label>
+                    <input type="text" required name="sector" id="sector"/>
+
+                    <label for="business">Core Business:</label>
+                    <input type="text" required name="business" id="business"/>
+
+                    <label for="TV6">Opmerkingen:</label>
+                    <textarea rows="5" cols="30" name="TekstVeld6" id="TV6"></textarea>
+                </fieldset>
+
+                   <!--for en id moeten aan elkaar gelijk zijn. Oftewel for van label moet zelfde zijn als id input!-->
+
+                    <input type="submit" value="verstuur">
+
+          </fieldset>
+        </form>
+  </body>
+
+</html>
